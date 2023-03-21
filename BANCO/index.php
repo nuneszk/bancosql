@@ -31,9 +31,9 @@ $turma =$_POST["t"];
 
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$db = "wendell";
+$username = "id19693869_bancosql2";
+$password = "Wendellnunu23@";
+$db = "id19693869_bancosql";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
