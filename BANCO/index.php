@@ -41,7 +41,31 @@
   <div class="col-sm-10">
   </div>
 </form>
- 
+<?php
+$servername = "localhost";
+$username = "id19705063_escola";
+$password = "S3nh4-b4nc0d4d0s";
+$dbname = "id19705063_db1";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
+}
+
+$sql = "SELECT nome, sobrenome, telefone FROM agenda";
+$resultado = $conn->query($sql);
+
+if ($resultado->num_rows > 0) {
+    while ($linha = $resultado->fetch_assoc()) {
+        echo $linha["nome"] . " " . $linha["sobrenome"] . " - " . $linha["telefone"] . "<br>";
+    }
+} else {
+    echo "Nenhum registro encontrado.";
+}
+
+$conn->close();
+?>
 <script src="script.js"></script>
 </body>
 </html>

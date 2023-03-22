@@ -30,26 +30,44 @@ $db = "id19693869_bancosql";
 
 
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername,$username, $password,$db);
 
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
+
+
+
+
+
+
+$sql = "INSERT INTO agenda (Nome,sobrenome,Numero)
+VALUES ('$nome', '$sobrenome','$Numero')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Registro criado com exito";
+} else {
+  echo "Erro: " . $sql . "<br>" . $conn->error;
 }
 
-$sql = "SELECT nome, sobrenome, telefone FROM agenda";
-$resultado = $conn->query($sql);
+$sql = "SELECT Nome,sobrenome,Numero FROM Registros";
+$result = $conn->query($sql);
 
-if ($resultado->num_rows > 0) {
-    while ($linha = $resultado->fetch_assoc()) {
-        echo $linha["nome"] . " " . $linha["sobrenome"] . " - " . $linha["telefone"] . "<br>";
-    }
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "  nome:    " . $row["Nome"]. 
+    "  sobrenome:    " . $row["sobrenome"].
+     "  Numero:    " . $row["Numero"]. "<br>";
+  }
 } else {
-    echo "Nenhum registro encontrado.";
+  echo "0 resultados tabela vazia";
 }
 
 $conn->close();
-?>
 
-    
+?>
+   
+
+ 
+
+
 </body>
 </html>
