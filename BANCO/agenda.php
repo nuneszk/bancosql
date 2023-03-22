@@ -1,21 +1,27 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP test</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-<h2> teste </h2>
 
 
-<?php 
+<div id="nex">
+<?php
+
+
+
 $nome =$_POST["n"];
 $sobrenome =$_POST["s"];
-$turma =$_POST["t"];
+$idade =$_POST["T"];
+$Numero =$_POST["i"];
+
+
 
 
 $servername = "localhost";
@@ -23,31 +29,47 @@ $username = "id19693869_bancosql2";
 $password = "Wendellnunu23@";
 $db = "id19693869_bancosql";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db);
 
-// Check connection
-if ($conn->connect_error) {
-  die("Conexao falhou: " . $conn->connect_error);
+
+$conn = new mysqli($servername,$username, $password,$db);
+
+
+
+
+
+
+
+$sql = "INSERT INTO agenda (Nome,sobrenome,Idade,Numero)
+VALUES ('$nome', '$sobrenome', '$idade','$Numero')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Registro criado com exito";
+} else {
+  echo "Erro: " . $sql . "<br>" . $conn->error;
 }
 
-$sql = "SELECT nome, sobrenome, telefone FROM agenda";
-$resultado = $conn->query($sql);
+$sql = "SELECT Nome,sobrenome,Idade,Numero FROM Registros";
+$result = $conn->query($sql);
 
-if ($resultado->num_rows > 0) {
-    while ($linha = $resultado->fetch_assoc()) {
-        echo $linha["nome"] . " " . $linha["sobrenome"] . " - " . $linha["telefone"] . "<br>";
-    }
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "  nome:    " . $row["Nome"]. 
+    "  sobrenome:    " . $row["sobrenome"].
+     "  Numero:    " . $row["Numero"]. "<br>";
+  }
 } else {
-    echo "Nenhum registro encontrado.";
+  echo "0 resultados tabela vazia";
 }
 
 $conn->close();
+
 ?>
+   <a color="red" href="https://bran-new-sevenths.000webhostapp.com/Registros/index.php">Registrar novamente</a>
+    </div>
 
-
+ 
 
 
 </body>
 </html>
-    
