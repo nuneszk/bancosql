@@ -13,7 +13,7 @@
 
 
 
-<form action="agenda.php" method="get">
+<form action="agenda.php" method="POST">
   <label>Nome:</label><br>
   <input type="text" id="n" name="n"><br><br>
   <label>Sobrenome:</label><br>

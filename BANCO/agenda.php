@@ -9,12 +9,13 @@
     <title>PHP test</title>
 </head>
 <body>
+<h2> teste </h2>
 
 
 <?php 
-$nome =$_GET["n"];
-$sobrenome =$_GET["s"];
-$turma =$_GET["t"];
+$nome =$_POST["n"];
+$sobrenome =$_POST["s"];
+$turma =$_POST["t"];
 
 
 $servername = "localhost";
