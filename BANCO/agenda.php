@@ -31,18 +31,20 @@ if ($conn->connect_error) {
   die("Conexao falhou: " . $conn->connect_error);
 }
 
+$sql = "SELECT nome, sobrenome, telefone FROM agenda";
+$resultado = $conn->query($sql);
 
-$sql = "INSERT INTO agenda (Nome, Sobrenome, Telefone)
-VALUES ('$nome', '$sobrenome', '$turma' )";
-
-if ($conn->query($sql) === TRUE) {
-  echo "Novo cadastro feito com êxito";
+if ($resultado->num_rows > 0) {
+    while ($linha = $resultado->fetch_assoc()) {
+        echo $linha["nome"] . " " . $linha["sobrenome"] . " - " . $linha["telefone"] . "<br>";
+    }
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Nenhum registro encontrado.";
 }
 
 $conn->close();
 ?>
+
 
 
 
