@@ -13,7 +13,7 @@
 
 
 
-<form action="index.php" method="post">
+<form action="agenda.php" method="post">
   <label>Nome:</label><br>
   <input type="text" id="n" name="n"><br><br>
   <label>Sobrenome:</label><br>
@@ -24,3 +24,5 @@
   <input type="submit" value="Enviar">
 </form>
 
+</body>
+</html>
