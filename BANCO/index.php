@@ -18,7 +18,7 @@
   <input type="text" id="n" name="n"><br><br>
   <label>Sobrenome:</label><br>
   <input type="text" id="s" name="s"><br><br>
-  <label>Turma:</label><br>
+  <label>Telefone:</label><br>
   <input type="text" id="t" name="t"><br><br>
   
   <input type="submit" value="Enviar">

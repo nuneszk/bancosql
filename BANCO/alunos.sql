@@ -28,20 +28,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `alunos` (
-  `ID` int(11) DEFAULT NULL,
   `Nome` varchar(255) DEFAULT NULL,
   `Sobrenome` varchar(255) DEFAULT NULL,
-  `Turma` varchar(255) DEFAULT NULL
+  `Telefone` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `alunos`
 --
 
-INSERT INTO `alunos` (`ID`, `Nome`, `Sobrenome`, `Turma`) VALUES
-(1, 'Wendell', 'Nunes', '3ºB'),
-(2, 'gabriel', 'martins', '3ºB'),
-(NULL, 'wendell', 'nunes', '3ºB');
+INSERT INTO `alunos` (`Nome`, `Sobrenome`, `Telefone`) VALUES
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
