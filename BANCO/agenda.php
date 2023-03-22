@@ -18,7 +18,6 @@
 
 $nome =$_POST["n"];
 $sobrenome =$_POST["s"];
-$idade =$_POST["T"];
 $Numero =$_POST["i"];
 
 
@@ -31,45 +30,26 @@ $db = "id19693869_bancosql";
 
 
 
-$conn = new mysqli($servername,$username, $password,$db);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-
-
-
-
-
-
-$sql = "INSERT INTO agenda (Nome,sobrenome,Idade,Numero)
-VALUES ('$nome', '$sobrenome', '$idade','$Numero')";
-
-if ($conn->query($sql) === TRUE) {
-  echo "Registro criado com exito";
-} else {
-  echo "Erro: " . $sql . "<br>" . $conn->error;
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
 }
 
-$sql = "SELECT Nome,sobrenome,Idade,Numero FROM Registros";
-$result = $conn->query($sql);
+$sql = "SELECT nome, sobrenome, telefone FROM agenda";
+$resultado = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "  nome:    " . $row["Nome"]. 
-    "  sobrenome:    " . $row["sobrenome"].
-     "  Numero:    " . $row["Numero"]. "<br>";
-  }
+if ($resultado->num_rows > 0) {
+    while ($linha = $resultado->fetch_assoc()) {
+        echo $linha["nome"] . " " . $linha["sobrenome"] . " - " . $linha["telefone"] . "<br>";
+    }
 } else {
-  echo "0 resultados tabela vazia";
+    echo "Nenhum registro encontrado.";
 }
 
 $conn->close();
-
 ?>
-   <a color="red" href="https://bran-new-sevenths.000webhostapp.com/Registros/index.php">Registrar novamente</a>
-    </div>
 
- 
-
-
+    
 </body>
 </html>
