@@ -11,10 +11,6 @@
 <body>
 
 
-
-
-
-
 <?php 
 $nome =$_POST["n"];
 $sobrenome =$_POST["s"];
