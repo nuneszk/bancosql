@@ -44,7 +44,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "INSERT INTO alunos (Nome, Sobrenome, Turma)
+$sql = "INSERT INTO agenda (Nome, Sobrenome, Telefone)
 VALUES ('$nome', '$sobrenome', '$turma' )";
 
 if ($conn->query($sql) === TRUE) {
