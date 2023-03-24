@@ -45,7 +45,7 @@ if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
  echo "conectado com sucesso"; 
-$sql = "SELECT nome, sobrenome, telefone FROM agenda";
+$sql = "SELECT nome, sobrenome, telefone FROM contato";
 $resultado = $conn->query($sql);
 
 if ($resultado->num_rows > 0) {
