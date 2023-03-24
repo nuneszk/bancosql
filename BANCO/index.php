@@ -23,7 +23,7 @@
     <input type="text"  name="s" id="exampleInputPassword1">
   </div>
   <div class="mb-3">
-    <label for="idade"class="form-label">idade</label>
+    <label for="telefone"class="form-label">telefone</label>
     <div class="col-sm-10">
     <input type="number"  name="T" id="exampleInputPassword1">
   </div>
@@ -47,6 +47,21 @@ if ($conn->connect_error) {
  echo "conectado com sucesso <br>"; 
 $sql = "SELECT nome, sobrenome, telefone FROM contato";
 $resultado = $conn->query($sql);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Coleta os dados do formulário
+  $nome = $_POST["n"];
+  $sobrenome = $_POST["s"];
+  $telefone = $_POST["t"];
+
+  // Insere os dados no banco de dados
+  $sql = "INSERT INTO agenda (nome, sobrenome, telefone) VALUES ('$nome', '$sobrenome', '$telefone')";
+  if ($conn->query($sql) === TRUE) {
+    echo "Dados inseridos com sucesso"."<br>";
+  } else {
+    echo "Erro ao inserir dados: " . $conn->error;
+  }
+}
 
 if ($resultado->num_rows > 0) {
     while ($linha = $resultado->fetch_assoc()) {
