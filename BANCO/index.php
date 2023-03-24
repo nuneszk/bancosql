@@ -32,18 +32,19 @@
   <div class="col-sm-10">
   </div>
 </form>
+
 <?php
 $servername = "localhost";
-$username = "id19693869_bancosql2";
+$username = "id19693869_nunes";
 $password = "Wendellnunu23@";
-$dbname = "id19693869_bancosql";
+$dbname = "id19693869_agenda";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
-
+ echo "conectado com sucesso"; 
 $sql = "SELECT nome, sobrenome, telefone FROM agenda";
 $resultado = $conn->query($sql);
 

@@ -24,13 +24,13 @@ $Numero =$_POST["i"];
 
 
 $servername = "localhost";
-$username = "id19693869_bancosql2";
+$username = "id19693869_nunes";
 $password = "Wendellnunu23@";
-$db = "id19693869_bancosql";
+$dbname = "id19693869_agenda";
 
 
 
-$conn = new mysqli($servername,$username, $password,$db);
+$conn = new mysqli($servername,$username, $password,$dbname);
 
 
 
