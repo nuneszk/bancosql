@@ -8,10 +8,9 @@
     <title>Regiter</title>
 </head>
 <body>
-    
-<form action="" method="post">
 <h2>Formulario alunos marta</h2>
-<form>
+
+<form action="" method="post">
   <div class="mb-3">
     <label for="nome" class="form-label">nome</label>
     <div class="col-sm-10">
@@ -25,7 +24,7 @@
   <div class="mb-3">
     <label for="telefone"class="form-label">telefone</label>
     <div class="col-sm-10">
-    <input type="text"  name="T" id="exampleInputPassword1">
+    <input type="text"  name="t" id="exampleInputPassword1">
   </div>
   <div class="mb-3">
   <button type="submit" class="btn btn-primary">Enviar</button>
@@ -63,13 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-if ($resultado->num_rows > 0) {
-    while ($linha = $resultado->fetch_assoc()) {
-        echo $linha["nome"] . " " . $linha["sobrenome"] . " - " . $linha["telefone"] . "<br>";
-    }
-} else {
-    echo "Nenhum registro encontrado.";
-}
 
 $conn->close();
 ?>
