@@ -9,7 +9,7 @@
 </head>
 <body>
     
-<form action="agenda.php" method="post">
+<form action="" method="post">
 <h2>Formulario alunos marta</h2>
 <form>
   <div class="mb-3">
