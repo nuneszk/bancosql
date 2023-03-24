@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $telefone = $_POST["telefone"];
 
   // Insere os dados no banco de dados
-  $sql = "INSERT INTO agenda (nome, sobrenome, telefone) VALUES ('$nome', '$sobrenome', '$telefone')";
+  $sql = "INSERT INTO contato (nome, sobrenome, telefone) VALUES ('$nome', '$sobrenome', '$telefone')";
   if ($conn->query($sql) === TRUE) {
     echo "Dados inseridos com sucesso"."<br>";
   } else {
