@@ -44,7 +44,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
- echo "conectado com sucesso"; 
+ echo "conectado com sucesso <br>"; 
 $sql = "SELECT nome, sobrenome, telefone FROM contato";
 $resultado = $conn->query($sql);
 
