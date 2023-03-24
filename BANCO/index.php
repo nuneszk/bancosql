@@ -24,7 +24,7 @@
   <div class="mb-3">
     <label for="telefone"class="form-label">telefone</label>
     <div class="col-sm-10">
-    <input type="text"  name="t" id="exampleInputPassword1">
+    <input type="text"  name="telefone" id="exampleInputPassword1">
   </div>
   <div class="mb-3">
   <button type="submit" class="btn btn-primary">Enviar</button>
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Coleta os dados do formulário
   $nome = $_POST["n"];
   $sobrenome = $_POST["s"];
-  $telefone = $_POST["t"];
+  $telefone = $_POST["telefone"];
 
   // Insere os dados no banco de dados
   $sql = "INSERT INTO agenda (nome, sobrenome, telefone) VALUES ('$nome', '$sobrenome', '$telefone')";
