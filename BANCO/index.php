@@ -29,9 +29,10 @@
   <div class="mb-3">
   <button type="submit" class="btn btn-primary">Enviar</button>
   <div class="col-sm-10">
+
   </div>
 </form>
-
+<a href="agenda.php">Click aqui para visualizar seus contatos</a>
 <?php
 $servername = "localhost";
 $username = "id19693869_nunes";
