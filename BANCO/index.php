@@ -28,24 +28,15 @@
     <input type="number"  name="T" id="exampleInputPassword1">
   </div>
   <div class="mb-3">
-    <label for="Numero"class="form-label">Numero</label>
-    <div class="col-sm-10">
-    <input type="number"  name="i" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <div class="mb-3">
   <button type="submit" class="btn btn-primary">Enviar</button>
   <div class="col-sm-10">
   </div>
 </form>
 <?php
 $servername = "localhost";
-$username = "id19705063_escola";
-$password = "S3nh4-b4nc0d4d0s";
-$dbname = "id19705063_db1";
+$username = "id19693869_bancosql2";
+$password = "Wendellnunu23@";
+$dbname = "id19693869_bancosql";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
