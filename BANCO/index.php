@@ -25,7 +25,7 @@
   <div class="mb-3">
     <label for="telefone"class="form-label">telefone</label>
     <div class="col-sm-10">
-    <input type="number"  name="T" id="exampleInputPassword1">
+    <input type="text"  name="T" id="exampleInputPassword1">
   </div>
   <div class="mb-3">
   <button type="submit" class="btn btn-primary">Enviar</button>
